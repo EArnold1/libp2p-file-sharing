@@ -105,7 +105,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
             // write file
 
-            let path = &format!("tmp/user_two/{}", &file_content.file_name);
+            let path = &format!("downloads/{}", &file_content.file_name);
 
             println!("{path}");
 
