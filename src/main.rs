@@ -97,7 +97,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
             // Await the requests, ignore the remaining once a single one succeeds.
             let file_content = futures::future::select_ok(requests)
                 .await
-                .map_err(|_| "None of the providers returned file.")?
+                .map_err(|e| format!("None of the providers returned file., {e:?}"))?
                 .0;
 
             // std::io::stdout().write_all(&file_content.file_name.as_bytes())?;
